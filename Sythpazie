@@ -1,0 +1,257 @@
+-- Services
+local UserInputService = game:GetService("UserInputService")
+
+-- Create UI
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local SynFrame = Instance.new("Frame")
+local ScriptList = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding = Instance.new("UIPadding")
+local Logo = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local Unlockfps = Instance.new("TextButton")
+local Reset = Instance.new("TextButton")
+local Uicredits = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Off = Instance.new("TextButton")
+local main = Instance.new("ScrollingFrame")
+local Editor = Instance.new("TextBox")
+
+-- Properties
+ScreenGui.Parent = game:GetService("CoreGui")
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.091, 0, 0.251, 0)
+MainFrame.Size = UDim2.new(0, 800, 0, 30)
+
+SynFrame.Name = "SynFrame"
+SynFrame.Parent = MainFrame
+SynFrame.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+SynFrame.BorderSizePixel = 0
+SynFrame.Position = UDim2.new(0, 0, 0.988, 0)
+SynFrame.Size = UDim2.new(0, 800, 0, 320)
+
+ScriptList.Name = "ScriptList"
+ScriptList.Parent = MainFrame
+ScriptList.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+ScriptList.BorderSizePixel = 0
+ScriptList.Position = UDim2.new(0.836, 0, 1.367, 0)
+ScriptList.Size = UDim2.new(0, 119, 0, 257)
+ScriptList.ScrollBarThickness = 7
+
+Logo.Name = "Logo"
+Logo.Parent = MainFrame
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1
+Logo.BorderSizePixel = 0
+Logo.Position = UDim2.new(0.007, 0, 0, 0)
+Logo.Size = UDim2.new(0, 29, 0, 29)
+Logo.Image = "http://www.roblox.com/asset/?id=2530517466"
+
+TextLabel.Parent = MainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.322, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 236, 0, 30)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Synapse X - v1.6.9a"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20
+
+main.Name = "main"
+main.Parent = MainFrame
+main.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.016, 0, 1.367, 0)
+main.Size = UDim2.new(0, 636, 0, 257)
+main.ScrollBarThickness = 7
+
+Editor.Parent = main
+Editor.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Editor.BorderSizePixel = 0
+Editor.Size = UDim2.new(1, -10, 1, -10)
+Editor.Position = UDim2.new(0, 5, 0, 5)
+Editor.Font = Enum.Font.Code
+Editor.TextColor3 = Color3.fromRGB(255, 255, 255)
+Editor.TextSize = 14
+Editor.TextXAlignment = Enum.TextXAlignment.Left
+Editor.TextYAlignment = Enum.TextYAlignment.Top
+Editor.ClearTextOnFocus = false
+Editor.MultiLine = true
+Editor.PlaceholderText = "-- Enter your script here"
+Editor.Text = ""
+
+-- Buttons
+Execute.Name = "Execute"
+Execute.Parent = MainFrame
+Execute.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.016, 0, 10.233, 0)
+Execute.Size = UDim2.new(0, 114, 0, 35)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 25
+
+Clear.Name = "Clear"
+Clear.Parent = MainFrame
+Clear.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.18, 0, 10.233, 0)
+Clear.Size = UDim2.new(0, 114, 0, 35)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clear.TextSize = 25
+
+Unlockfps.Name = "Unlockfps"
+Unlockfps.Parent = MainFrame
+Unlockfps.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Unlockfps.BorderSizePixel = 0
+Unlockfps.Position = UDim2.new(0.343, 0, 10.233, 0)
+Unlockfps.Size = UDim2.new(0, 114, 0, 35)
+Unlockfps.Font = Enum.Font.SourceSans
+Unlockfps.Text = "Unlock FPS"
+Unlockfps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unlockfps.TextSize = 25
+
+Reset.Name = "Reset"
+Reset.Parent = MainFrame
+Reset.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Reset.BorderSizePixel = 0
+Reset.Position = UDim2.new(0.505, 0, 10.233, 0)
+Reset.Size = UDim2.new(0, 114, 0, 35)
+Reset.Font = Enum.Font.SourceSans
+Reset.Text = "Reset"
+Reset.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reset.TextSize = 25
+
+Uicredits.Name = "Uicredits"
+Uicredits.Parent = MainFrame
+Uicredits.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Uicredits.BorderSizePixel = 0
+Uicredits.Position = UDim2.new(0.836, 0, 10.233, 0)
+Uicredits.Size = UDim2.new(0, 119, 0, 35)
+Uicredits.Font = Enum.Font.SourceSans
+Uicredits.Text = "UI Credits"
+Uicredits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Uicredits.TextSize = 25
+
+Close.Name = "Close"
+Close.Parent = MainFrame
+Close.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+Close.BackgroundTransparency = 1
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.97, 0, 0, 0)
+Close.Size = UDim2.new(0, 24, 0, 24)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 25
+
+Off.Name = "Off"
+Off.Parent = MainFrame
+Off.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+Off.BackgroundTransparency = 1
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0.94, 0, 0, 0)
+Off.Size = UDim2.new(0, 24, 0, 24)
+Off.Font = Enum.Font.SourceSans
+Off.Text = "-"
+Off.TextColor3 = Color3.fromRGB(255, 255, 255)
+Off.TextSize = 25
+
+-- Button Functions
+Execute.MouseButton1Click:Connect(function()
+    loadstring(Editor.Text)()
+end)
+
+Clear.MouseButton1Click:Connect(function()
+    Editor.Text = ""
+end)
+
+Unlockfps.MouseButton1Click:Connect(function()
+    setfpscap(999)
+end)
+
+Reset.MouseButton1Click:Connect(function()
+    game.Players.LocalPlayer.Character:BreakJoints()
+end)
+
+Uicredits.MouseButton1Click:Connect(function()
+    Editor.Text = "-- UI Design by HTDBarsi\n-- Executor functionality by Smartlightyear & Lunar"
+end)
+
+Close.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+Off.MouseButton1Click:Connect(function()
+    local val = main.Visible
+    main.Visible = not val
+    ScriptList.Visible = not val
+    SynFrame.Visible = not val
+    Execute.Visible = not val
+    Clear.Visible = not val
+    Unlockfps.Visible = not val
+    Reset.Visible = not val
+    Uicredits.Visible = not val
+end)
+
+-- Button Hover Effects
+local buttons = {Close, Off, Execute, Clear, Unlockfps, Reset, Uicredits}
+for _, button in pairs(buttons) do
+    button.MouseEnter:Connect(function()
+        button.BorderSizePixel = 1
+        button.BackgroundTransparency = 0.8
+    end)
+    
+    button.MouseLeave:Connect(function()
+        button.BorderSizePixel = 0
+        button.BackgroundTransparency = 0
+    end)
+end
+
+-- Dragging Functionality
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+MainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+MainFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
