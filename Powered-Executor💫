@@ -69,6 +69,7 @@ ScriptBox.TextSize = 14
 ScriptBox.MultiLine = true
 ScriptBox.ClearTextOnFocus = false
 ScriptBox.Parent = Container
+ScriptBox.TextScaled = true
 
 ExecuteButton.Name = "ExecuteButton"
 ExecuteButton.Size = UDim2.new(0.48, 0, 0.15, 0)
